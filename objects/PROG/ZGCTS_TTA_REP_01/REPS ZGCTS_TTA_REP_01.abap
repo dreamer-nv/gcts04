@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 REPORT zgcts_tta_rep_01.
 
-" test commit 5
+" test commit 6
 
 PARAMETERS p_res TYPE i.
 
