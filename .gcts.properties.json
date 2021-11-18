@@ -1,1 +1,1 @@
-{"name":"dreamer-nv-gcts04","version":"1.0.0","description":"dreamer-nv-gcts04","repositoryLayout":{"formatVersion":4,"format":"json","objectStorage":"plain","metaInformation":".gctsmetadata/","tableContent":"true"}}
+{"name":"dreamer-nv-gcts04","version":"1.0.0","description":"dreamer-nv-gcts04","repositoryLayout":{"formatVersion":4,"format":"json","objectStorage":"plain","metaInformation":".gctsmetadata/","tableContent":"true"},"dependencies":[{"name":"wrgcts00","url":"https://github.com/SAPDX21GCTS/wrgcts00"}]}
