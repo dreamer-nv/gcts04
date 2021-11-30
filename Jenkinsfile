@@ -20,15 +20,7 @@ pipeline {
                 gctsExecuteABAPUnitTests script: this
             } // steps
         } //stage
-
-        stage ('Run ATC Checks') {
-            steps {
-                abapEnvironmentRunATCCheck script: this
-            } // steps
-        } // stage
-        
         stage ('Rollback Commit') {
-            when { expression { checks_failed == true } }
             steps {
                 gctsRollback script: this
             } // steps
