@@ -17,10 +17,26 @@ pipeline {
         } //stage
         stage ('Run Unit Tests') {
             steps {
-                gctsExecuteABAPUnitTests script: this
+                script {
+                    checks_failed = false
+                    try {
+                        gctsExecuteABAPUnitTests script: this
+                    } catch (err) {
+                        unstable('AUnit test failed!')
+                        checks_failed = true
+                    } // try
+                } // script
             } // steps
         } //stage
+
+        stage ('Run ATC Checks') {
+            steps {
+                abapEnvironmentRunATCCheck script: this
+            } // steps
+        } // stage
+        
         stage ('Rollback Commit') {
+            when { expression { checks_failed == true } }
             steps {
                 gctsRollback script: this
             } // steps
